@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}CU Economics Search Engine - Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron bg-light py-5">
+    <div class="container text-center">
+        <h1 class="display-4 mb-4">Coventry University Economics Publications</h1>
+        <p class="lead mb-4">
+            A specialized search engine for papers published by members of Coventry University's School of Economics, Finance and Accounting.
+        </p>
+        <div class="d-flex justify-content-center">
+            <form action="/search" method="get" class="d-flex col-md-6">
+                <input type="text" name="query" class="form-control me-2" placeholder="Search for publications...">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-search fa-3x mb-3 text-primary"></i>
+                    <h3 class="card-title">Specialized Search</h3>
+                    <p class="card-text">
+                        Find relevant academic papers published by members of Coventry University's School of Economics, Finance and Accounting.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-filter fa-3x mb-3 text-success"></i>
+                    <h3 class="card-title">Filter Results</h3>
+                    <p class="card-text">
+                        Narrow down your search by author, publication year, or specific keywords to find exactly what you need.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-external-link-alt fa-3x mb-3 text-info"></i>
+                    <h3 class="card-title">Access Publications</h3>
+                    <p class="card-text">
+                        Quickly access publication pages and author profiles with direct links to Coventry University's PurePortal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">How it Works</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><i class="fas fa-spider text-secondary me-2"></i> Web Crawler</h4>
+                            <p>
+                                Our system uses a specialized web crawler to extract publication data from Coventry University's PurePortal. The crawler collects information such as authors, publication years, titles, abstracts, and keywords.
+                            </p>
+                            
+                            <h4><i class="fas fa-database text-secondary me-2"></i> Inverted Index</h4>
+                            <p>
+                                We build and maintain an efficient inverted index that enables fast and accurate searches. The index is automatically updated to include the latest publications.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4><i class="fas fa-sort-amount-down text-secondary me-2"></i> Ranking Algorithm</h4>
+                            <p>
+                                Search results are ranked using the BM25 algorithm, a probabilistic ranking model that balances term frequency and document length to provide the most relevant results.
+                            </p>
+                            
+                            <h4><i class="fas fa-sync-alt text-secondary me-2"></i> Regular Updates</h4>
+                            <p>
+                                The system is scheduled to automatically update its database weekly, ensuring that you always have access to the latest publications from Coventry University's School of Economics, Finance and Accounting.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <h3 class="mb-4">Start Searching Now</h3>
+            <a href="/search" class="btn btn-lg btn-primary">
+                <i class="fas fa-search"></i> Go to Search Page
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,432 @@
+{% extends "base.html" %}
+
+{% block title %}CU Economics Search Engine - Admin{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="mb-4">Search Engine Administration</h1>
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle"></i> This page allows you to manage the search engine system components and view system statistics.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Crawler Section -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0"><i class="fas fa-spider"></i> Web Crawler</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        The crawler extracts publication data from Coventry University's PurePortal website. It collects author information, publication details, and other metadata.
+                    </p>
+                    <div id="crawler-status" class="alert alert-secondary">
+                        Crawler status: <span id="crawler-status-text">Loading...</span>
+                    </div>
+                    <button id="start-crawler-btn" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Start Crawler
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Index Section -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0"><i class="fas fa-database"></i> Inverted Index</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        The inverted index enables fast and accurate searching of publications. It processes and indexes the data collected by the crawler.
+                    </p>
+                    <div id="index-status" class="alert alert-secondary">
+                        Index status: <span id="index-status-text">Loading...</span>
+                    </div>
+                    <button id="build-index-btn" class="btn btn-success">
+                        <i class="fas fa-sync"></i> Build/Update Index
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <!-- Schedule Section -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-info text-white">
+                    <h3 class="mb-0"><i class="fas fa-calendar-alt"></i> Scheduled Tasks</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        The system automatically updates its database on a weekly basis to ensure it contains the latest publications.
+                    </p>
+                    <div id="schedule-status" class="alert alert-secondary">
+                        Next scheduled run: <span id="next-run-text">Calculating...</span>
+                    </div>
+                    <button id="force-update-btn" class="btn btn-info text-white">
+                        <i class="fas fa-bolt"></i> Force Update Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Log Section -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-secondary text-white">
+                    <h3 class="mb-0"><i class="fas fa-clipboard-list"></i> System Logs</h3>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        System logs provide information about crawler and indexing operations, errors, and other important events.
+                    </p>
+                    <div class="d-grid gap-2">
+                        <button id="view-logs-btn" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#logs-modal">
+                            <i class="fas fa-file-alt"></i> View Logs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h3 class="mb-0">
+                        <i class="fas fa-chart-line"></i> System Statistics
+                        <button id="refresh-stats-btn" class="btn btn-sm btn-light float-end">
+                            <i class="fas fa-sync"></i> Refresh
+                        </button>
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card stats-card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Publications</h5>
+                                    <h2 id="total-publications">-</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card stats-card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Unique Authors</h5>
+                                    <h2 id="unique-authors">-</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card stats-card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Vocabulary Size</h5>
+                                    <h2 id="vocabulary-size">-</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card stats-card">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Years Range</h5>
+                                    <h2 id="years-range">-</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6 mb-3">
+                            <div class="card stats-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Disk Usage</h5>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p>Crawled Data: <span id="data-size">-</span></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Index Size: <span id="index-size">-</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card stats-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Index Information</h5>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p>Indexed Documents: <span id="indexed-documents">-</span></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Avg Document Length: <span id="avg-document-length">-</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-light mt-3 mb-0">
+                                <small class="text-muted">Last updated: <span id="last-updated">-</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logs Modal -->
+<div class="modal fade" id="logs-modal" tabindex="-1" aria-labelledby="logsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logsModalLabel">System Logs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <select id="log-type" class="form-select">
+                        <option value="crawler">Crawler Logs</option>
+                        <option value="index">Index Logs</option>
+                        <option value="web">Web App Logs</option>
+                    </select>
+                </div>
+                <pre id="log-content" class="p-3 bg-light" style="max-height: 400px; overflow-y: auto;">Loading logs...</pre>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Global variables
+    let statsInterval;
+    
+    // Document ready
+    $(document).ready(function() {
+        // Load initial statistics
+        loadSystemStats();
+        
+        // Set up automatic refresh every 5 seconds while page is open
+        statsInterval = setInterval(loadSystemStats, 5000);
+        
+        // Handle button clicks
+        $('#start-crawler-btn').on('click', startCrawler);
+        $('#build-index-btn').on('click', buildIndex);
+        $('#force-update-btn').on('click', forceUpdate);
+        $('#refresh-stats-btn').on('click', loadSystemStats);
+        
+        // Handle log type change
+        $('#log-type').on('change', loadLogs);
+        
+        // Initial log load when modal opens
+        $('#logs-modal').on('shown.bs.modal', function() {
+            loadLogs();
+        });
+        
+        // Clean up interval when leaving page
+        $(window).on('beforeunload', function() {
+            clearInterval(statsInterval);
+        });
+    });
+    
+    // Load system statistics
+    function loadSystemStats() {
+        $.ajax({
+            url: '/api/status',
+            method: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    updateStats(response.stats);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error loading stats:', error);
+            }
+        });
+    }
+    
+    // Update statistics display
+    function updateStats(stats) {
+        // Update statistics cards
+        $('#total-publications').text(stats.total_publications || 0);
+        $('#unique-authors').text(stats.unique_authors || 0);
+        $('#vocabulary-size').text(stats.vocabulary_size || 0);
+        $('#years-range').text(stats.years_range || 'N/A');
+        $('#data-size').text(stats.data_size || '0 MB');
+        $('#index-size').text(stats.index_size || '0 MB');
+        $('#indexed-documents').text(stats.indexed_documents || 0);
+        $('#avg-document-length').text(stats.avg_document_length || 0);
+        $('#last-updated').text(stats.last_updated || 'Never');
+        
+        // Update crawler status
+        if (stats.crawler_running) {
+            $('#crawler-status').removeClass('alert-secondary alert-success').addClass('alert-warning');
+            $('#crawler-status-text').text('Running...');
+            $('#start-crawler-btn').prop('disabled', true);
+        } else {
+            $('#crawler-status').removeClass('alert-secondary alert-warning').addClass('alert-success');
+            $('#crawler-status-text').text('Ready');
+            $('#start-crawler-btn').prop('disabled', false);
+        }
+        
+        // Update index status
+        if (stats.indexing_running) {
+            $('#index-status').removeClass('alert-secondary alert-success').addClass('alert-warning');
+            $('#index-status-text').text('Running...');
+            $('#build-index-btn').prop('disabled', true);
+        } else {
+            $('#index-status').removeClass('alert-secondary alert-warning').addClass('alert-success');
+            $('#index-status-text').text('Ready');
+            $('#build-index-btn').prop('disabled', false);
+        }
+        
+        // Calculate next scheduled run
+        const now = new Date();
+        const nextMonday = new Date();
+        nextMonday.setDate(now.getDate() + (1 + 7 - now.getDay()) % 7); // Next Monday
+        nextMonday.setHours(1, 0, 0, 0); // 1:00 AM
+        
+        if (now > nextMonday) {
+            nextMonday.setDate(nextMonday.getDate() + 7); // Add a week
+        }
+        
+        $('#next-run-text').text(nextMonday.toLocaleString());
+    }
+    
+    // Start crawler
+    function startCrawler() {
+        if (confirm('Start the crawler to fetch new publications?')) {
+            showLoading('Starting crawler...');
+            
+            $.ajax({
+                url: '/api/start_crawler',
+                method: 'POST',
+                success: function(response) {
+                    hideLoading();
+                    
+                    if (response.success) {
+                        alert('Crawler started successfully');
+                        loadSystemStats();
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    hideLoading();
+                    alert('Error starting crawler: ' + error);
+                }
+            });
+        }
+    }
+    
+    // Build/update index
+    function buildIndex() {
+        if (confirm('Build or update the index?')) {
+            showLoading('Building index...');
+            
+            $.ajax({
+                url: '/api/build_index',
+                method: 'POST',
+                success: function(response) {
+                    hideLoading();
+                    
+                    if (response.success) {
+                        alert('Indexing started successfully');
+                        loadSystemStats();
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    hideLoading();
+                    alert('Error building index: ' + error);
+                }
+            });
+        }
+    }
+    
+    // Force update
+    function forceUpdate() {
+        if (confirm('Force a system update now? This will run the crawler and rebuild the index.')) {
+            showLoading('Forcing update...');
+            
+            $.ajax({
+                url: '/api/force_update',
+                method: 'POST',
+                success: function(response) {
+                    hideLoading();
+                    
+                    if (response.success) {
+                        alert('System update started successfully');
+                        loadSystemStats();
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    hideLoading();
+                    alert('Error forcing update: ' + error);
+                }
+            });
+        }
+    }
+    
+    // Load logs
+    function loadLogs() {
+        const logType = $('#log-type').val();
+        let logFile;
+        
+        switch (logType) {
+            case 'crawler':
+                logFile = 'crawler.log';
+                break;
+            case 'index':
+                logFile = 'index.log';
+                break;
+            case 'web':
+                logFile = 'web_app.log';
+                break;
+            default:
+                logFile = 'crawler.log';
+        }
+        
+        $('#log-content').text('Loading logs...');
+        
+        // In a real application, this would be an API endpoint to fetch log content
+        // For this example, we'll just simulate it with static content
+        const sampleLogs = {
+            'crawler': '2025-03-09 10:15:23 - INFO - Starting crawler from https://pureportal.coventry.ac.uk/...\n' +
+                       '2025-03-09 10:15:25 - INFO - Fetching: https://pureportal.coventry.ac.uk/...\n' +
+                       '2025-03-09 10:15:28 - INFO - Found publication: Economic Policy Analysis...\n' +
+                       '2025-03-09 10:15:30 - INFO - Fetching: https://pureportal.coventry.ac.uk/publication/123...',
+            'index': '2025-03-09 11:30:15 - INFO - Building inverted index...\n' +
+                     '2025-03-09 11:30:18 - INFO - Processing 150 publications\n' +
+                     '2025-03-09 11:31:05 - INFO - Index built with 25,000 terms and 150 documents',
+            'web': '2025-03-09 09:00:01 - INFO - Web application started\n' +
+                   '2025-03-09 09:15:23 - INFO - Search request: "economics policy"\n' +
+                   '2025-03-09 09:15:24 - INFO - Returned 15 results'
+        };
+        
+        setTimeout(function() {
+            $('#log-content').text(sampleLogs[logType]);
+        }, 500);
+    }
+</script>
+{% endblock %}

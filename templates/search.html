@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block title %}CU Economics Search Engine - Search{% endblock %}
+
+{% block content %}
+<div class="search-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">Search Publications</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <form id="search-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="query" class="form-label">Keywords</label>
+                                    <input type="text" class="form-control" id="query" placeholder="Enter search keywords..." value="{{ request.args.get('query', '') }}">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="author" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="author" placeholder="Author name">
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="year" class="form-label">Year</label>
+                                    <input type="number" class="form-control" id="year" placeholder="Publication year">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-search"></i> Search
+                                    </button>
+                                    <button type="reset" class="btn btn-secondary">
+                                        <i class="fas fa-times"></i> Clear
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-12">
+            <div id="result-stats" class="alert alert-info" role="alert">
+                Enter a search query to begin
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="results-container"></div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4 mb-5">
+        <button id="load-more" class="btn btn-primary d-none">
+            <i class="fas fa-plus"></i> Load More Results
+        </button>
+    </div>
+</div>
+
+<!-- Publication Modal -->
+<div class="modal fade" id="publication-modal" tabindex="-1" aria-labelledby="publicationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="publicationModalLabel">Publication Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="publication-details">
+                    <h4 id="modal-title"></h4>
+                    <div class="mb-3">
+                        <strong>Authors:</strong> <span id="modal-authors"></span>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Year:</strong> <span id="modal-year"></span>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Abstract:</strong>
+                        <p id="modal-abstract" class="mt-2"></p>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Keywords:</strong>
+                        <div id="modal-keywords" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a id="modal-pub-link" href="#" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> View Publication
+                </a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Global variables
+    let allResults = [];
+    let currentResults = [];
+    let currentPage = 1;
+    const resultsPerPage = 10;
+    
+    // Document ready
+    $(document).ready(function() {
+        // Handle search form submission
+        $('#search-form').on('submit', function(e) {
+            e.preventDefault();
+            currentPage = 1;
+            performSearch();
+        });
+        
+        // Handle load more button
+        $('#load-more').on('click', function() {
+            currentPage++;
+            displayResults();
+        });
+        
+        // Auto-run search if query parameter exists in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const queryParam = urlParams.get('query');
+        if (queryParam) {
+            $('#query').val(queryParam);
+            performSearch();
+        }
+    });
+    
+    // Perform search
+    function performSearch() {
+        const query = $('#query').val().trim();
+        const author = $('#author').val().trim();
+        const year = $('#year').val().trim();
+        
+        if (!query && !author && !year) {
+            $('#result-stats').text('Please enter at least one search parameter');
+            $('#results-container').empty();
+            $('#load-more').addClass('d-none');
+            return;
+        }
+        
+        // Show loading
+        showLoading('Searching...');
+        
+        // Make API call
+        $.ajax({
+            url: '/api/search',
+            method: 'GET',
+            data: {
+                query: query,
+                author: author,
+                year: year
+            },
+            success: function(response) {
+                hideLoading();
+                
+                if (response.success) {
+                    allResults = response.results;
+                    currentResults = [];
+                    
+                    // Update stats
+                    $('#result-stats').text(response.message);
+                    
+                    // Display results
+                    displayResults();
+                } else {
+                    $('#result-stats').text(response.message);
+                    $('#results-container').empty();
+                    $('#load-more').addClass('d-none');
+                }
+            },
+            error: function(xhr, status, error) {
+                hideLoading();
+                $('#result-stats').text('Error performing search: ' + error);
+                $('#results-container').empty();
+                $('#load-more').addClass('d-none');
+            }
+        });
+    }
+    
+    // Display results for current page
+    function displayResults() {
+        const startIndex = (currentPage - 1) * resultsPerPage;
+        const endIndex = Math.min(startIndex + resultsPerPage, allResults.length);
+        
+        // Get the slice of results for this page
+        const pageResults = allResults.slice(startIndex, endIndex);
+        currentResults = currentResults.concat(pageResults);
+        
+        // Create HTML for results
+        if (currentPage === 1) {
+            $('#results-container').empty();
+        }
+        
+        for (const result of pageResults) {
+            const resultHtml = createResultCard(result);
+            $('#results-container').append(resultHtml);
+        }
+        
+        // Show/hide load more button
+        if (endIndex < allResults.length) {
+            $('#load-more').removeClass('d-none');
+        } else {
+            $('#load-more').addClass('d-none');
+        }
+        
+        // Attach click handlers to the new result cards
+        $('.publication-card').off('click').on('click', function() {
+            const index = $(this).data('index');
+            showPublicationDetails(allResults[index]);
+        });
+    }
+    
+    // Create HTML for a single result card
+    function createResultCard(result, index) {
+        const resultIndex = allResults.indexOf(result);
+        let html = `
+            <div class="card publication-card mb-3" data-index="${resultIndex}">
+                <div class="card-body">
+                    <h5 class="card-title">${result.title}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <span class="badge badge-year">${result.year || 'Unknown year'}</span>
+                        ${result.authors.map(author => `<span class="badge badge-author">${author}</span>`).join('')}
+                    </h6>
+                    <p class="card-text">
+                        ${result.abstract ? result.abstract.substring(0, 200) + '...' : 'No abstract available'}
+                    </p>
+                    <div class="text-end">
+                        <span class="text-muted small">Relevance score: ${result.score.toFixed(2)}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+        return html;
+    }
+    
+    // Show publication details in modal
+    function showPublicationDetails(publication) {
+        // Populate modal fields
+        $('#modal-title').text(publication.title);
+        $('#modal-authors').text(publication.authors.join(', '));
+        $('#modal-year').text(publication.year || 'Unknown');
+        $('#modal-abstract').text(publication.abstract || 'No abstract available');
+        
+        // Keywords
+        $('#modal-keywords').empty();
+        if (publication.keywords && publication.keywords.length > 0) {
+            for (const keyword of publication.keywords) {
+                $('#modal-keywords').append(`<span class="badge badge-keyword me-2">${keyword}</span>`);
+            }
+        } else {
+            $('#modal-keywords').text('No keywords available');
+        }
+        
+        // Set publication link
+        if (publication.url) {
+            $('#modal-pub-link').attr('href', publication.url).removeClass('d-none');
+        } else {
+            $('#modal-pub-link').attr('href', '#').addClass('d-none');
+        }
+        
+        // Show modal
+        const modal = new bootstrap.Modal(document.getElementById('publication-modal'));
+        modal.show();
+    }
