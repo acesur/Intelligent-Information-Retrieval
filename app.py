@@ -9,11 +9,19 @@ import time
 from datetime import datetime
 import json
 
+# Configure paths for imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(current_dir)
+
 # Import our modules
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from crawler import PurePortalCrawler
-from inverted_index import InvertedIndex
-from query_processor import QueryProcessor
+try:
+    from crawler import PurePortalCrawler
+    from inverted_index import InvertedIndex
+    from query_processor import QueryProcessor
+except ImportError as e:
+    print(f"Error importing modules: {e}")
+    print("Make sure crawler.py, inverted_index.py, and query_processor.py are in the same directory as app.py")
+    sys.exit(1)
 
 # Configure logging
 logging.basicConfig(
@@ -29,7 +37,7 @@ logger = logging.getLogger("WebApp")
 app = Flask(__name__)
 
 # Global variables
-data_dir = "crawled_data"
+data_dir = "."  # Changed from "crawled_data" to match the expected structure
 index_dir = "index_data"
 query_processor = None
 crawler_running = False
@@ -76,7 +84,7 @@ def scheduled_task():
     # Run crawler
     try:
         start_url = "https://pureportal.coventry.ac.uk/en/organisations/fbl-school-of-economics-finance-and-accounting"
-        crawler = PurePortalCrawler(start_url)
+        crawler = PurePortalCrawler(start_url, data_dir=data_dir)
         crawler.crawl(max_pages=200)
         logger.info(f"Scheduled crawler completed. Found {len(crawler.publications)} publications.")
     except Exception as e:
@@ -84,7 +92,7 @@ def scheduled_task():
     
     # Run indexing
     try:
-        index_builder = InvertedIndex()
+        index_builder = InvertedIndex(data_dir=data_dir, index_dir=index_dir)
         if os.path.exists(f"{index_dir}/index.pkl"):
             success = index_builder.update_index()
         else:
@@ -151,12 +159,13 @@ def search_api():
         
         # Filter results if multiple criteria
         if author and (query or year):
-            results = [r for r in results if any(author.lower() in a.lower() for a in r['authors'])]
+            results = [r for r in results if any(author.lower() in a.lower() for a in r.get('authors', r.get('Authors', [])))]
         
         if year and (query or author):
             try:
                 year_int = int(year)
-                results = [r for r in results if r.get('year') == year_int]
+                # Handle both 'year' and 'Year' fields
+                results = [r for r in results if r.get('year', r.get('Year', None)) == year_int]
             except ValueError:
                 pass
         
@@ -165,12 +174,12 @@ def search_api():
         for result in results:
             # Convert non-serializable objects and clean the result
             clean_result = {
-                'title': result.get('title', 'No title'),
-                'authors': result.get('authors', []),
-                'year': result.get('year', ''),
-                'url': result.get('url', ''),
-                'abstract': result.get('abstract', 'No abstract available'),
-                'keywords': result.get('keywords', []),
+                'title': result.get('title', result.get('Title', 'No title')),
+                'authors': result.get('authors', result.get('Authors', [])),
+                'year': result.get('year', result.get('Year', '')),
+                'url': result.get('url', result.get('Publication Link', '')),
+                'abstract': result.get('abstract', result.get('Abstract', 'No abstract available')),
+                'keywords': result.get('keywords', result.get('Keywords', [])),
                 'score': float(result.get('score', 0))
             }
             clean_results.append(clean_result)
@@ -212,7 +221,7 @@ def get_status():
             # Count by year
             years = {}
             for pub in publications:
-                year = pub.get('year')
+                year = pub.get('year', pub.get('Year', None))
                 if year:
                     years[year] = years.get(year, 0) + 1
             
@@ -223,7 +232,7 @@ def get_status():
             # Count unique authors
             authors = set()
             for pub in publications:
-                for author in pub.get('authors', []):
+                for author in pub.get('authors', pub.get('Authors', [])):
                     authors.add(author)
             
             stats['unique_authors'] = len(authors)
@@ -251,12 +260,18 @@ def get_status():
     
     # Get file system stats
     if os.path.exists(data_dir):
-        data_size = sum(os.path.getsize(os.path.join(data_dir, f)) for f in os.listdir(data_dir) if os.path.isfile(os.path.join(data_dir, f)))
-        stats['data_size'] = f"{data_size / (1024*1024):.2f} MB"
+        try:
+            data_size = sum(os.path.getsize(os.path.join(data_dir, f)) for f in os.listdir(data_dir) if os.path.isfile(os.path.join(data_dir, f)))
+            stats['data_size'] = f"{data_size / (1024*1024):.2f} MB"
+        except:
+            stats['data_size'] = "N/A"
     
     if os.path.exists(index_dir):
-        index_size = sum(os.path.getsize(os.path.join(index_dir, f)) for f in os.listdir(index_dir) if os.path.isfile(os.path.join(index_dir, f)))
-        stats['index_size'] = f"{index_size / (1024*1024):.2f} MB"
+        try:
+            index_size = sum(os.path.getsize(os.path.join(index_dir, f)) for f in os.listdir(index_dir) if os.path.isfile(os.path.join(index_dir, f)))
+            stats['index_size'] = f"{index_size / (1024*1024):.2f} MB"
+        except:
+            stats['index_size'] = "N/A"
     
     # Add system status
     stats['crawler_running'] = crawler_running
@@ -361,6 +376,57 @@ def force_update():
         'success': True,
         'message': 'Forced update started'
     })
+
+@app.route('/api/logs')
+def get_logs():
+    """API endpoint for getting system logs"""
+    log_file = request.args.get('file', 'web_app.log')
+    
+    # Validate log_file to prevent path traversal
+    valid_logs = ['crawler.log', 'index.log', 'web_app.log', 'search.log']
+    if log_file not in valid_logs:
+        return jsonify({
+            'success': False,
+            'message': 'Invalid log file',
+            'content': ''
+        })
+    
+    try:
+        if os.path.exists(log_file):
+            # Get the last 500 lines for performance
+            with open(log_file, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+                content = ''.join(lines[-500:])
+            
+            return jsonify({
+                'success': True,
+                'message': 'Log content loaded',
+                'content': content
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'message': f'Log file {log_file} not found',
+                'content': ''
+            })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'Error reading log file: {str(e)}',
+            'content': ''
+        })
+
+# Cleanup function to stop background thread when the app exits
+def cleanup():
+    global stop_bg_thread
+    stop_bg_thread = True
+    if bg_thread and bg_thread.is_alive():
+        bg_thread.join(timeout=1.0)
+    logger.info("Application shutting down")
+
+# Register cleanup function to be called on exit
+import atexit
+atexit.register(cleanup)
 
 if __name__ == '__main__':
     # Run with debug=True for development, False for production

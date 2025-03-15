@@ -409,24 +409,23 @@
         
         $('#log-content').text('Loading logs...');
         
-        // In a real application, this would be an API endpoint to fetch log content
-        // For this example, we'll just simulate it with static content
-        const sampleLogs = {
-            'crawler': '2025-03-09 10:15:23 - INFO - Starting crawler from https://pureportal.coventry.ac.uk/...\n' +
-                       '2025-03-09 10:15:25 - INFO - Fetching: https://pureportal.coventry.ac.uk/...\n' +
-                       '2025-03-09 10:15:28 - INFO - Found publication: Economic Policy Analysis...\n' +
-                       '2025-03-09 10:15:30 - INFO - Fetching: https://pureportal.coventry.ac.uk/publication/123...',
-            'index': '2025-03-09 11:30:15 - INFO - Building inverted index...\n' +
-                     '2025-03-09 11:30:18 - INFO - Processing 150 publications\n' +
-                     '2025-03-09 11:31:05 - INFO - Index built with 25,000 terms and 150 documents',
-            'web': '2025-03-09 09:00:01 - INFO - Web application started\n' +
-                   '2025-03-09 09:15:23 - INFO - Search request: "economics policy"\n' +
-                   '2025-03-09 09:15:24 - INFO - Returned 15 results'
-        };
-        
-        setTimeout(function() {
-            $('#log-content').text(sampleLogs[logType]);
-        }, 500);
+        $.ajax({
+            url: '/api/logs',
+            method: 'GET',
+            data: {
+                file: logFile
+            },
+            success: function(response) {
+                if (response.success) {
+                    $('#log-content').text(response.content);
+                } else {
+                    $('#log-content').text('Error: ' + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                $('#log-content').text('Error loading logs: ' + error);
+            }
+        });
     }
 </script>
 {% endblock %}
