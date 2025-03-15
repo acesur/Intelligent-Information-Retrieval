@@ -51,6 +51,10 @@ class QueryProcessor:
         
         # Load the index and publications
         self.load_data()
+
+        # Option for partial loading
+        self.use_partial_loading = True
+        self.pubilcation_chunks = {}
     
     def load_data(self):
         """Load the index and publications data"""
@@ -75,20 +79,50 @@ class QueryProcessor:
             else:
                 logger.error(f"No index found at {self.index_dir}")
                 return False
-            
+            pub_path = f"{self.data_dir}/publications.pkl"
             # Load publications
-            if os.path.exists(f"{self.data_dir}/publications.pkl"):
-                with open(f"{self.data_dir}/publications.pkl", 'rb') as f:
-                    self.publications = pickle.load(f)
-                logger.info(f"Loaded {len(self.publications)} publications")
+            if os.path.exists(pub_path):
+                file_size = os.path.getsize(pub_path) / (1024 * 1024)
+
+                if file_size > 100 and self.use_partial_loading:
+                    logger.info(f"Publication file is large ({file_size:.2f} MB), using partial loading")
+                    self.load_publications_metadata(pub_path)
+                else:
+                    with open(pub_path) as f:
+                        self.publications = pickle.load(f)
+                    logger.info(f"Loaded {len(self.publications)} publications")
+                
             else:
-                logger.error(f"No publications data found at {self.data_dir}/publications.pkl")
+                logger.error(f"No publications data found at {pub_path}")
                 return False
             
             return True
         except Exception as e:
             logger.error(f"Error loading data: {e}")
             return False
+    def load_publications_metadata(self, path):
+        """Load just essential metadata for efficient memory usage"""
+        try:
+            with open(path, 'rb') as f:
+                self.publications = []
+                all_pubs = pickle.load(f)
+
+                for pub in all_pubs:
+                    light_pub = {
+                        'title': pub.get('Title', pub.get('title', 'Untitled')),
+                        'authors': pub.get('Authors', pub.get('authors', [])),
+                        'year': pub.get('Year', pub.get('year', None))
+                    }
+                    self.publications.append(light_pub)
+
+                self.pubilcation_chunks = {
+                    'file_path': path,
+                    'count': len(all_pubs)
+                }
+
+                logger.info(f"loaded metadata for {len(self.publications)} publications")
+        except Exception as e:
+            logger.info(f"Error loading publication metadata: {e}")
     
     def preprocess_query(self, query_text):
         """Preprocess the query similar to document preprocessing"""
