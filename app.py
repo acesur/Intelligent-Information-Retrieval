@@ -168,6 +168,21 @@ def search_api():
                 results = [r for r in results if r.get('year', r.get('Year', None)) == year_int]
             except ValueError:
                 pass
+        if author and query:
+            results = [r for r in results if any(author.lower() in a.lower()
+                                                 for a in r.get('authors', r.get('Authors', [])))]
+        if year and query:
+            try:
+                year_int = int(year)
+                results = [r for r in results if r.get('year', r.get('Year', None)) == year_int]
+            except ValueError:
+                pass
+        if year and author and not query:
+            try:
+                year_int = int(year)
+                results = [r for r in results if r.get('year', r.get('Year', None)) == year_int]
+            except ValueError:
+                pass
         
         # Clean results for JSON serialization
         clean_results = []

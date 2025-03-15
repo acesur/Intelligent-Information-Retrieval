@@ -31,10 +31,19 @@ class PurePortalCrawler:
         # Create data directory if it doesn't exist
         if not os.path.exists(data_dir):
             os.makedirs(data_dir)
-            
-        # Initialize WebDriver
-        logger.info("Initializing WebDriver")
-        self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+
+        try:    
+            # Initialize WebDriver
+            logger.info("Initializing WebDriver")
+            self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+        except Exception as e:
+            logger.error(f"Failed to initialize WebDriver: {e}")
+            logger.info("Attempting alternative initialization...")
+            try:
+                self.driver = webdriver.Chrome()
+            except Exception as e2:
+                logger.error(f"Second attempt failed: {e2}")
+                raise Exception("Could not initialize WebDriver. Please ensure Chrome and ChromeDriver are installed correctly.")
     
     def __del__(self):
         """Clean up resources when object is destroyed"""

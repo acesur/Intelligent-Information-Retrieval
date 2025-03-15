@@ -3299,3 +3299,158 @@ Stacktrace:
 2025-03-15 15:55:55,749 - INFO - 127.0.0.1 - - [15/Mar/2025 15:55:55] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
 2025-03-15 15:56:48,904 - INFO - Application shutting down
 2025-03-15 15:56:49,232 - INFO - Application shutting down
+2025-03-15 15:57:48,021 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:57:48,023 - INFO - Loaded 759 publications
+2025-03-15 15:57:48,028 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:57:48,030 - INFO - Loaded 759 publications
+2025-03-15 15:57:48,073 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-15 15:57:48,074 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 15:57:48,079 - INFO -  * Restarting with stat
+2025-03-15 15:57:52,500 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:57:52,503 - INFO - Loaded 759 publications
+2025-03-15 15:57:52,509 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:57:52,511 - INFO - Loaded 759 publications
+2025-03-15 15:57:52,547 - WARNING -  * Debugger is active!
+2025-03-15 15:57:52,552 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:58:04,570 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:04] "GET / HTTP/1.1" 200 -
+2025-03-15 15:58:09,925 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:09] "GET /search?query=Popular+movie+effects+on+advanced+finance+course+performance HTTP/1.1" 200 -
+2025-03-15 15:58:10,036 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 15:58:10,037 - INFO - Found 10 results
+2025-03-15 15:58:10,038 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:10] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 15:58:39,217 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 15:58:39,218 - INFO - Found 10 results
+2025-03-15 15:58:39,221 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:39] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 15:58:41,962 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:41] "GET /admin HTTP/1.1" 200 -
+2025-03-15 15:58:42,037 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:58:42,050 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:42] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:58:47,039 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:58:47,047 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:47] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:58:52,038 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:58:52,052 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:52] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:58:52,361 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:58:52,370 - INFO - 127.0.0.1 - - [15/Mar/2025 15:58:52] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:58:57,551 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:59:18,128 - INFO - 127.0.0.1 - - [15/Mar/2025 15:59:18] "GET /search HTTP/1.1" 200 -
+2025-03-15 15:59:22,560 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:59:27,563 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:59:32,059 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:59:32,969 - INFO - 127.0.0.1 - - [15/Mar/2025 15:59:32] "GET /search HTTP/1.1" 200 -
+2025-03-15 15:59:37,045 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:59:41,705 - INFO - 127.0.0.1 - - [15/Mar/2025 15:59:41] "GET / HTTP/1.1" 200 -
+2025-03-15 15:59:42,612 - INFO - 127.0.0.1 - - [15/Mar/2025 15:59:42] "GET / HTTP/1.1" 200 -
+2025-03-15 15:59:42,787 - INFO - 127.0.0.1 - - [15/Mar/2025 15:59:42] "GET / HTTP/1.1" 200 -
+2025-03-15 16:00:09,342 - INFO - 127.0.0.1 - - [15/Mar/2025 16:00:09] "GET / HTTP/1.1" 200 -
+2025-03-15 16:00:14,752 - INFO - 127.0.0.1 - - [15/Mar/2025 16:00:14] "GET / HTTP/1.1" 200 -
+2025-03-15 16:00:46,430 - INFO - 127.0.0.1 - - [15/Mar/2025 16:00:46] "GET / HTTP/1.1" 200 -
+2025-03-15 16:00:47,890 - INFO - 127.0.0.1 - - [15/Mar/2025 16:00:47] "GET / HTTP/1.1" 200 -
+2025-03-15 16:00:48,081 - INFO - 127.0.0.1 - - [15/Mar/2025 16:00:48] "GET / HTTP/1.1" 200 -
+2025-03-15 16:00:48,257 - INFO - 127.0.0.1 - - [15/Mar/2025 16:00:48] "GET / HTTP/1.1" 200 -
+2025-03-15 16:01:14,644 - INFO - 127.0.0.1 - - [15/Mar/2025 16:01:14] "GET / HTTP/1.1" 200 -
+2025-03-15 16:01:57,921 - INFO - 127.0.0.1 - - [15/Mar/2025 16:01:57] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 16:01:57,926 - INFO - 127.0.0.1 - - [15/Mar/2025 16:01:57] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 16:01:57,929 - INFO - 127.0.0.1 - - [15/Mar/2025 16:01:57] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 16:01:57,936 - INFO - 127.0.0.1 - - [15/Mar/2025 16:01:57] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 16:01:57,940 - INFO - 127.0.0.1 - - [15/Mar/2025 16:01:57] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 16:02:03,828 - INFO - Application shutting down
+2025-03-15 16:02:04,152 - INFO - Application shutting down
+2025-03-15 16:02:12,159 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:02:12,162 - INFO - Loaded 759 publications
+2025-03-15 16:02:12,168 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:02:12,172 - INFO - Loaded 759 publications
+2025-03-15 16:02:12,232 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-15 16:02:12,234 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 16:02:12,239 - INFO -  * Restarting with stat
+2025-03-15 16:02:16,821 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:02:16,824 - INFO - Loaded 759 publications
+2025-03-15 16:02:16,828 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:02:16,830 - INFO - Loaded 759 publications
+2025-03-15 16:02:16,860 - WARNING -  * Debugger is active!
+2025-03-15 16:02:16,865 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 16:03:05,453 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:05] "GET / HTTP/1.1" 200 -
+2025-03-15 16:03:07,780 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:07] "GET /admin HTTP/1.1" 200 -
+2025-03-15 16:03:07,857 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 16:03:07,866 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:07] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 16:03:09,353 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:09] "GET / HTTP/1.1" 200 -
+2025-03-15 16:03:10,582 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:10] "GET /search HTTP/1.1" 200 -
+2025-03-15 16:03:11,803 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:11] "GET /admin HTTP/1.1" 200 -
+2025-03-15 16:03:11,864 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 16:03:11,876 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:11] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 16:03:14,396 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:14] "GET /search HTTP/1.1" 200 -
+2025-03-15 16:03:45,307 - INFO - 127.0.0.1 - - [15/Mar/2025 16:03:45] "GET /api/search?query=&author=Brahmana&year= HTTP/1.1" 200 -
+2025-03-15 16:04:18,757 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:04:18,757 - INFO - Found 10 results
+2025-03-15 16:04:18,758 - INFO - 127.0.0.1 - - [15/Mar/2025 16:04:18] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=Brahmana&year=2025 HTTP/1.1" 200 -
+2025-03-15 16:04:23,335 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:04:23,336 - INFO - Found 10 results
+2025-03-15 16:04:23,336 - INFO - 127.0.0.1 - - [15/Mar/2025 16:04:23] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 16:04:30,911 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:04:30,912 - INFO - Found 10 results
+2025-03-15 16:04:30,913 - INFO - 127.0.0.1 - - [15/Mar/2025 16:04:30] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year=2025 HTTP/1.1" 200 -
+2025-03-15 16:04:39,541 - INFO - 127.0.0.1 - - [15/Mar/2025 16:04:39] "GET /api/search?query=&author=&year=2025 HTTP/1.1" 200 -
+2025-03-15 16:04:43,966 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:04:43,967 - INFO - Found 10 results
+2025-03-15 16:04:43,968 - INFO - 127.0.0.1 - - [15/Mar/2025 16:04:43] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 16:13:28,911 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\app.py', reloading
+2025-03-15 16:13:28,912 - INFO - Application shutting down
+2025-03-15 16:13:29,293 - INFO -  * Restarting with stat
+2025-03-15 16:13:34,484 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:13:34,487 - INFO - Loaded 759 publications
+2025-03-15 16:13:34,492 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:13:34,496 - INFO - Loaded 759 publications
+2025-03-15 16:13:34,550 - WARNING -  * Debugger is active!
+2025-03-15 16:13:34,557 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 16:32:19,969 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\app.py', reloading
+2025-03-15 16:32:19,970 - INFO - Application shutting down
+2025-03-15 16:32:20,294 - INFO -  * Restarting with stat
+2025-03-15 16:32:25,229 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:32:25,231 - INFO - Loaded 759 publications
+2025-03-15 16:32:25,236 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:32:25,239 - INFO - Loaded 759 publications
+2025-03-15 16:32:25,267 - WARNING -  * Debugger is active!
+2025-03-15 16:32:25,272 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 16:33:03,272 - INFO - 127.0.0.1 - - [15/Mar/2025 16:33:03] "GET /api/search?query=&author=Brahmana&year= HTTP/1.1" 200 -
+2025-03-15 16:33:08,927 - INFO - 127.0.0.1 - - [15/Mar/2025 16:33:08] "GET /api/search?query=&author=Brahmana&year=2025 HTTP/1.1" 200 -
+2025-03-15 16:33:18,186 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:33:18,188 - INFO - Found 10 results
+2025-03-15 16:33:18,188 - INFO - 127.0.0.1 - - [15/Mar/2025 16:33:18] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year=2025 HTTP/1.1" 200 -
+2025-03-15 16:33:27,743 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:33:27,743 - INFO - Found 10 results
+2025-03-15 16:33:27,744 - INFO - 127.0.0.1 - - [15/Mar/2025 16:33:27] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 16:33:41,856 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:33:41,857 - INFO - Found 10 results
+2025-03-15 16:33:41,859 - INFO - 127.0.0.1 - - [15/Mar/2025 16:33:41] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year=2025 HTTP/1.1" 200 -
+2025-03-15 16:33:59,647 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:33:59,648 - INFO - Found 10 results
+2025-03-15 16:33:59,649 - INFO - 127.0.0.1 - - [15/Mar/2025 16:33:59] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 16:34:07,736 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:34:07,737 - INFO - Found 10 results
+2025-03-15 16:34:07,737 - INFO - 127.0.0.1 - - [15/Mar/2025 16:34:07] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=Brahmana&year=2025 HTTP/1.1" 200 -
+2025-03-15 16:39:09,304 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\crawler.py', reloading
+2025-03-15 16:39:09,305 - INFO - Application shutting down
+2025-03-15 16:39:09,699 - INFO -  * Restarting with stat
+2025-03-15 16:39:14,480 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:39:14,484 - INFO - Loaded 759 publications
+2025-03-15 16:39:14,489 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:39:14,491 - INFO - Loaded 759 publications
+2025-03-15 16:39:14,520 - WARNING -  * Debugger is active!
+2025-03-15 16:39:14,526 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 16:42:01,749 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 16:42:01,750 - INFO - Found 10 results
+2025-03-15 16:42:01,751 - INFO - 127.0.0.1 - - [15/Mar/2025 16:42:01] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 16:42:34,367 - INFO - Searching for: esg perform countervail forc polit risk
+2025-03-15 16:42:34,368 - INFO - Found 10 results
+2025-03-15 16:42:34,369 - INFO - 127.0.0.1 - - [15/Mar/2025 16:42:34] "GET /api/search?query=Can%20ESG%20performance%20be%20a%20countervailing%20force%20against%20political%20risk?&author=&year= HTTP/1.1" 200 -
+2025-03-15 16:43:06,933 - INFO - 127.0.0.1 - - [15/Mar/2025 16:43:06] "GET /search HTTP/1.1" 200 -
+2025-03-15 16:44:58,948 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\inverted_index.py', reloading
+2025-03-15 16:44:58,949 - INFO - Application shutting down
+2025-03-15 16:44:59,306 - INFO -  * Restarting with stat
+2025-03-15 16:45:03,748 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:45:21,305 - INFO - Loaded 759 publications
+2025-03-15 16:45:21,497 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 16:45:21,500 - INFO - Loaded 759 publications
+2025-03-15 16:45:21,530 - WARNING -  * Debugger is active!
+2025-03-15 16:45:21,539 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 16:45:21,559 - INFO - 127.0.0.1 - - [15/Mar/2025 16:45:21] "GET /api/search?query=&author=Brahmana&year= HTTP/1.1" 200 -
+2025-03-15 16:45:23,758 - INFO - Application shutting down
