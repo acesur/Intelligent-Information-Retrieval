@@ -3096,3 +3096,206 @@ Stacktrace:
 2025-03-15 15:17:39,562 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
 2025-03-15 15:17:39,597 - INFO - 127.0.0.1 - - [15/Mar/2025 15:17:39] "GET /api/status HTTP/1.1" 200 -
 2025-03-15 15:17:40,836 - INFO - Application shutting down
+2025-03-15 15:34:11,274 - ERROR - No index found at index_data
+2025-03-15 15:34:11,274 - ERROR - No index found at index_data
+2025-03-15 15:34:11,274 - WARNING - Failed to initialize query processor. Search results may be unavailable.
+2025-03-15 15:34:11,327 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-15 15:34:11,327 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 15:34:11,332 - INFO -  * Restarting with stat
+2025-03-15 15:34:16,305 - ERROR - No index found at index_data
+2025-03-15 15:34:16,306 - ERROR - No index found at index_data
+2025-03-15 15:34:16,307 - WARNING - Failed to initialize query processor. Search results may be unavailable.
+2025-03-15 15:34:16,381 - WARNING -  * Debugger is active!
+2025-03-15 15:34:16,387 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:34:16,412 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:16,420 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:16] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:18,776 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:18,795 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:18] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:20,719 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:20] "GET /admin HTTP/1.1" 200 -
+2025-03-15 15:34:20,946 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:20,961 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:20] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:31,551 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:31] "POST /api/build_index HTTP/1.1" 200 -
+2025-03-15 15:34:31,574 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:31,574 - INFO - Loaded 759 publications for indexing
+2025-03-15 15:34:31,575 - INFO - Building inverted index...
+2025-03-15 15:34:31,580 - ERROR - Error building index: 'title'
+2025-03-15 15:34:31,584 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:31] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:33,742 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:33,756 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:33] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:35,948 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:35,952 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:35] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:40,943 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:40,952 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:40] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:45,953 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:45,978 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:45] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:50,943 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:50,947 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:50] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:34:55,953 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:34:55,957 - INFO - 127.0.0.1 - - [15/Mar/2025 15:34:55] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:00,951 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:00,955 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:00] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:05,951 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:05,955 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:05] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:10,939 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:10,943 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:10] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:15,938 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:15,942 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:15] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:20,936 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:20,940 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:20] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:26,552 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:26,556 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:26] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:31,561 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:31,570 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:31] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:36,547 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:36,550 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:36] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:40,943 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:40,947 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:40] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:46,558 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:46,562 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:46] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:51,548 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:51,552 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:51] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:35:55,942 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:35:55,947 - INFO - 127.0.0.1 - - [15/Mar/2025 15:35:55] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:01,559 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:01,563 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:01] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:06,553 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:06,559 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:06] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:11,551 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:11,556 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:11] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:16,559 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:16,562 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:16] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:21,554 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:21,560 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:21] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:25,939 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:25,943 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:25] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:31,551 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:31,555 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:31] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:36,558 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:36,564 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:36] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:41,553 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:41,557 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:41] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:46,549 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:46,556 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:46] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:51,562 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:51,569 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:51] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:36:56,556 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:36:56,560 - INFO - 127.0.0.1 - - [15/Mar/2025 15:36:56] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:37:01,563 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:37:01,567 - INFO - 127.0.0.1 - - [15/Mar/2025 15:37:01] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:37:06,547 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:37:06,555 - INFO - 127.0.0.1 - - [15/Mar/2025 15:37:06] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:37:11,558 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:37:11,563 - INFO - 127.0.0.1 - - [15/Mar/2025 15:37:11] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:37:16,548 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:37:16,552 - INFO - 127.0.0.1 - - [15/Mar/2025 15:37:16] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:37:21,555 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:37:21,562 - INFO - 127.0.0.1 - - [15/Mar/2025 15:37:21] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:37:26,559 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:37:26,565 - INFO - 127.0.0.1 - - [15/Mar/2025 15:37:26] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:12,563 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:12,570 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:12] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:15,429 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\inverted_index.py', reloading
+2025-03-15 15:38:15,430 - INFO - Application shutting down
+2025-03-15 15:38:15,747 - INFO -  * Restarting with stat
+2025-03-15 15:38:20,805 - ERROR - No index found at index_data
+2025-03-15 15:38:20,806 - ERROR - No index found at index_data
+2025-03-15 15:38:20,807 - WARNING - Failed to initialize query processor. Search results may be unavailable.
+2025-03-15 15:38:20,850 - WARNING -  * Debugger is active!
+2025-03-15 15:38:20,855 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:38:20,877 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:20,883 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:20] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:20,939 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:20,943 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:20] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:25,566 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:25] "GET / HTTP/1.1" 200 -
+2025-03-15 15:38:29,731 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:29] "GET /admin HTTP/1.1" 200 -
+2025-03-15 15:38:29,966 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:29,981 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:29] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:32,848 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:32] "POST /api/build_index HTTP/1.1" 200 -
+2025-03-15 15:38:32,875 - INFO - Loaded 759 publications for indexing
+2025-03-15 15:38:32,875 - INFO - Building inverted index...
+2025-03-15 15:38:33,263 - INFO - Index built with 1670 terms and 759 documents
+2025-03-15 15:38:33,272 - INFO - Index saved to index_data
+2025-03-15 15:38:33,273 - INFO - Indexing completed. Contains 759 documents and 1670 terms.
+2025-03-15 15:38:33,322 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:38:33,325 - INFO - Loaded 759 publications
+2025-03-15 15:38:33,329 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:38:33,333 - INFO - Loaded 759 publications
+2025-03-15 15:38:34,237 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:34,251 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:34] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:34,976 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:34,991 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:34] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:39,967 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:39,979 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:39] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:44,980 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:44,993 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:44] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:49,961 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:49,972 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:49] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:54,972 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-15 15:38:54,983 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:54] "GET /api/status HTTP/1.1" 200 -
+2025-03-15 15:38:56,798 - INFO - 127.0.0.1 - - [15/Mar/2025 15:38:56] "GET /search HTTP/1.1" 200 -
+2025-03-15 15:39:00,529 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 15:39:00,531 - INFO - Found 10 results
+2025-03-15 15:39:00,536 - INFO - 127.0.0.1 - - [15/Mar/2025 15:39:00] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 15:40:44,270 - ERROR - Error during search: 'authors'
+2025-03-15 15:40:44,272 - INFO - 127.0.0.1 - - [15/Mar/2025 15:40:44] "GET /api/search?query=&author=Ajala&year= HTTP/1.1" 200 -
+2025-03-15 15:47:00,817 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\query_processor.py', reloading
+2025-03-15 15:47:00,818 - INFO - Application shutting down
+2025-03-15 15:47:01,145 - INFO -  * Restarting with stat
+2025-03-15 15:47:06,265 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:47:06,268 - INFO - Loaded 759 publications
+2025-03-15 15:47:06,273 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:47:06,277 - INFO - Loaded 759 publications
+2025-03-15 15:47:06,306 - WARNING -  * Debugger is active!
+2025-03-15 15:47:06,312 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:48:45,090 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\query_processor.py', reloading
+2025-03-15 15:48:45,091 - INFO - Application shutting down
+2025-03-15 15:48:45,422 - INFO -  * Restarting with stat
+2025-03-15 15:48:50,009 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:48:50,012 - INFO - Loaded 759 publications
+2025-03-15 15:48:50,017 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:48:50,020 - INFO - Loaded 759 publications
+2025-03-15 15:48:50,053 - WARNING -  * Debugger is active!
+2025-03-15 15:48:50,058 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:49:17,350 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\query_processor.py', reloading
+2025-03-15 15:49:17,353 - INFO - Application shutting down
+2025-03-15 15:49:17,680 - INFO -  * Restarting with stat
+2025-03-15 15:49:22,640 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:49:22,643 - INFO - Loaded 759 publications
+2025-03-15 15:49:22,649 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:49:22,652 - INFO - Loaded 759 publications
+2025-03-15 15:49:22,682 - WARNING -  * Debugger is active!
+2025-03-15 15:49:22,688 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:50:12,181 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\query_processor.py', reloading
+2025-03-15 15:50:12,182 - INFO - Application shutting down
+2025-03-15 15:50:12,506 - INFO -  * Restarting with stat
+2025-03-15 15:50:17,511 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:50:17,514 - INFO - Loaded 759 publications
+2025-03-15 15:50:17,525 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:50:17,528 - INFO - Loaded 759 publications
+2025-03-15 15:50:17,557 - WARNING -  * Debugger is active!
+2025-03-15 15:50:17,562 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:51:33,216 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\query_processor.py', reloading
+2025-03-15 15:51:33,217 - INFO - Application shutting down
+2025-03-15 15:51:33,539 - INFO -  * Restarting with stat
+2025-03-15 15:51:38,769 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:51:38,772 - INFO - Loaded 759 publications
+2025-03-15 15:51:38,778 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:51:38,782 - INFO - Loaded 759 publications
+2025-03-15 15:51:38,817 - WARNING -  * Debugger is active!
+2025-03-15 15:51:38,822 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:51:48,927 - INFO -  * Detected change in 'C:\\Users\\Dell\\Documents\\Intelligent-Information-Retrieval\\query_processor.py', reloading
+2025-03-15 15:51:48,928 - INFO - Application shutting down
+2025-03-15 15:51:49,322 - INFO -  * Restarting with stat
+2025-03-15 15:51:54,942 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:51:54,947 - INFO - Loaded 759 publications
+2025-03-15 15:51:54,951 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-15 15:51:54,954 - INFO - Loaded 759 publications
+2025-03-15 15:51:54,986 - WARNING -  * Debugger is active!
+2025-03-15 15:51:54,991 - INFO -  * Debugger PIN: 977-913-793
+2025-03-15 15:52:50,590 - INFO - 127.0.0.1 - - [15/Mar/2025 15:52:50] "GET /api/search?query=&author=Ajala&year= HTTP/1.1" 200 -
+2025-03-15 15:55:55,747 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-15 15:55:55,748 - INFO - Found 10 results
+2025-03-15 15:55:55,749 - INFO - 127.0.0.1 - - [15/Mar/2025 15:55:55] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-15 15:56:48,904 - INFO - Application shutting down
+2025-03-15 15:56:49,232 - INFO - Application shutting down

@@ -86,18 +86,18 @@ class InvertedIndex:
         
         # Combine all text fields
         text = ""
-        if doc['title']:
-            text += doc['title'] + " "
+        if 'Title' in doc and doc['Title']:
+            text += doc['Title'] + " "
         
-        if doc['abstract']:
-            text += doc['abstract'] + " "
+        if 'Abstract' in doc and doc['Abstract']:
+            text += doc['Abstract'] + " "
         
         # Add authors with higher weight (repeat to boost)
-        for author in doc['authors']:
+        for author in doc.get('Authors',[]):
             text += author + " " + author + " "
         
         # Add keywords with higher weight
-        for keyword in doc['keywords']:
+        for keyword in doc.get('Keywords',[]):
             text += keyword + " " + keyword + " " + keyword + " "
         
         # Preprocess

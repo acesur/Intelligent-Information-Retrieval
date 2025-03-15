@@ -149,6 +149,20 @@ class QueryProcessor:
             if doc_id < len(self.publications):
                 result = self.publications[doc_id].copy()
                 result['score'] = score
+
+                #Normalize publication field names for consistent output
+                if 'Title' in result and 'title' not in result:
+                    result['title'] = result['Title']
+                if 'Authors' in result and 'authors' not in result:
+                    result['authors'] = result['Authors']
+                if 'Year' in result and 'year' not in result:
+                    result['year'] = result['Year']
+                if 'Abstract' in result and 'abstract' not in result:
+                    result['abstract'] = result['Abstract']
+                if 'Publication Link' in result and 'url' not in result:
+                    result['url'] = result['Publication Link']
+                if 'Keywords' in result and 'keywords' not in result:
+                    result['keywords'] = result['Keywords'] 
                 top_results.append(result)
         
         logger.info(f"Found {len(top_results)} results")
@@ -164,15 +178,28 @@ class QueryProcessor:
         results = []
         
         for doc_id, pub in enumerate(self.publications):
-            for pub_author in pub['authors']:
+            for pub_author in pub.get('authors',[]):
                 if author_name in pub_author.lower():
                     result = pub.copy()
                     result['score'] = 1.0  # Default score for author matches
+
+                    if 'Title' in result and 'title' not in result:
+                        result['title'] = result['Title']
+                    if 'Authors' in result and 'authors' not in result:
+                        result['authors'] = result['Authors']
+                    if 'Year' in result and 'year' not in result:
+                        result['year'] = result['Year']
+                    if 'Abstract' in result and 'abstract' not in result:
+                        result['abstract'] = result['Abstract']
+                    if 'Publication Link' in result and 'url' not in result:
+                        result['url'] = result['Publication Link']
+                    if 'Keywords' in result and 'keywords' not in result:
+                        result['keywords'] = result['Keywords'] 
                     results.append(result)
                     break
         
         # Sort by year (most recent first)
-        results.sort(key=lambda x: x.get('year', 0), reverse=True)
+        results.sort(key=lambda x: x.get('year', 0) if 'Year' in x else x.get('year', 0), reverse=True)
         
         return results[:max_results]
     
@@ -190,6 +217,19 @@ class QueryProcessor:
                 if pub.get('year') == year:
                     result = pub.copy()
                     result['score'] = 1.0  # Default score for year matches
+
+                    if 'Title' in result and 'title' not in result:
+                        result['title'] = result['Title']
+                    if 'Authors' in result and 'authors' not in result:
+                        result['authors'] = result['Authors']
+                    if 'Year' in result and 'year' not in result:
+                        result['year'] = result['Year']
+                    if 'Abstract' in result and 'abstract' not in result:
+                        result['abstract'] = result['Abstract']
+                    if 'Publication Link' in result and 'url' not in result:
+                        result['url'] = result['Publication Link']
+                    if 'Keywords' in result and 'keywords' not in result:
+                        result['keywords'] = result['Keywords'] 
                     results.append(result)
             
             return results[:max_results]
