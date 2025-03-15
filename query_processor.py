@@ -88,7 +88,7 @@ class QueryProcessor:
                     logger.info(f"Publication file is large ({file_size:.2f} MB), using partial loading")
                     self.load_publications_metadata(pub_path)
                 else:
-                    with open(pub_path) as f:
+                    with open(pub_path, 'rb') as f:
                         self.publications = pickle.load(f)
                     logger.info(f"Loaded {len(self.publications)} publications")
                 
@@ -115,7 +115,7 @@ class QueryProcessor:
                     }
                     self.publications.append(light_pub)
 
-                self.pubilcation_chunks = {
+                self.publication_chunks = {
                     'file_path': path,
                     'count': len(all_pubs)
                 }
@@ -212,7 +212,7 @@ class QueryProcessor:
         results = []
         
         for doc_id, pub in enumerate(self.publications):
-            for pub_author in pub.get('authors',[]):
+            for pub_author in pub.get('authors',pub.get('Authors',[])):
                 if author_name in pub_author.lower():
                     result = pub.copy()
                     result['score'] = 1.0  # Default score for author matches
@@ -248,7 +248,7 @@ class QueryProcessor:
             results = []
             
             for doc_id, pub in enumerate(self.publications):
-                if pub.get('year') == year:
+                if pub.get('year', pub.get('Year')) == year:
                     result = pub.copy()
                     result['score'] = 1.0  # Default score for year matches
 
