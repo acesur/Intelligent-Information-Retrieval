@@ -34,12 +34,14 @@ cu-economics-search-engine/
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd cu-economics-search-engine
+cd Intelligent-Information-Retrieval
 ```
 
 2. Install required dependencies:
 ```bash
 pip install flask requests beautifulsoup4 nltk schedule
+pip install -r requirements.txt
+
 ```
 
 3. Download NLTK resources (first time only):

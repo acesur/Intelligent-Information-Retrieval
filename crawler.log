@@ -3486,3 +3486,221 @@ Stacktrace:
 2025-03-15 17:29:21,284 - INFO - 127.0.0.1 - - [15/Mar/2025 17:29:21] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=Brahmana&year=2025 HTTP/1.1" 200 -
 2025-03-15 17:29:40,752 - INFO - Application shutting down
 2025-03-15 17:29:41,089 - INFO - Application shutting down
+2025-03-16 15:45:35,111 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:45:35,132 - INFO - Loaded 759 publications
+2025-03-16 15:45:35,138 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:45:35,142 - INFO - Loaded 759 publications
+2025-03-16 15:45:35,209 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-16 15:45:35,209 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-16 15:45:35,214 - INFO -  * Restarting with stat
+2025-03-16 15:45:40,080 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:45:40,083 - INFO - Loaded 759 publications
+2025-03-16 15:45:40,088 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:45:40,092 - INFO - Loaded 759 publications
+2025-03-16 15:45:40,130 - WARNING -  * Debugger is active!
+2025-03-16 15:45:40,136 - INFO -  * Debugger PIN: 123-642-195
+2025-03-16 15:45:58,691 - INFO - 127.0.0.1 - - [16/Mar/2025 15:45:58] "GET / HTTP/1.1" 200 -
+2025-03-16 15:45:58,999 - INFO - 127.0.0.1 - - [16/Mar/2025 15:45:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-16 15:46:18,830 - INFO - 127.0.0.1 - - [16/Mar/2025 15:46:18] "GET /search?query=Popular+movie+effects+on+advanced+finance+course+performance HTTP/1.1" 200 -
+2025-03-16 15:46:19,033 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:46:19,034 - INFO - Found 10 results
+2025-03-16 15:46:19,036 - INFO - 127.0.0.1 - - [16/Mar/2025 15:46:19] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-16 15:46:59,091 - INFO - Searching for: popular movi effect advanc financ cours perform flip classroom class view
+2025-03-16 15:46:59,092 - INFO - Found 10 results
+2025-03-16 15:46:59,097 - INFO - 127.0.0.1 - - [16/Mar/2025 15:46:59] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance:%20flipped%20classroom%20vs%20in-class%20view&author=&year= HTTP/1.1" 200 -
+2025-03-16 15:47:06,523 - INFO - Searching for: popular movi effect advanc financ cours perform flip classroom class view
+2025-03-16 15:47:06,524 - INFO - Found 10 results
+2025-03-16 15:47:06,529 - INFO - 127.0.0.1 - - [16/Mar/2025 15:47:06] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance:%20flipped%20classroom%20vs%20in-class%20view&author=Brahmana&year= HTTP/1.1" 200 -
+2025-03-16 15:47:22,098 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:47:22,100 - INFO - Found 10 results
+2025-03-16 15:47:22,105 - INFO - 127.0.0.1 - - [16/Mar/2025 15:47:22] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-16 15:47:48,048 - INFO - 127.0.0.1 - - [16/Mar/2025 15:47:48] "GET /admin HTTP/1.1" 200 -
+2025-03-16 15:47:48,124 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:47:48,161 - INFO - 127.0.0.1 - - [16/Mar/2025 15:47:48] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:47:53,120 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:47:53,127 - INFO - 127.0.0.1 - - [16/Mar/2025 15:47:53] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:47:55,080 - INFO - 127.0.0.1 - - [16/Mar/2025 15:47:55] "GET /api/logs?file=crawler.log HTTP/1.1" 200 -
+2025-03-16 15:47:58,124 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:47:58,136 - INFO - 127.0.0.1 - - [16/Mar/2025 15:47:58] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:03,119 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:03,131 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:03] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:08,120 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:08,127 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:08] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:08,156 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:08,163 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:08] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:13,122 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:13,130 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:13] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:18,121 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:18,131 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:18] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:23,139 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:23,150 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:23] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:28,120 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:28,128 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:28] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:33,119 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:33,129 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:33] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:41,652 - INFO - Running scheduled tasks
+2025-03-16 15:48:41,653 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:41] "POST /api/force_update HTTP/1.1" 200 -
+2025-03-16 15:48:41,660 - INFO - Initializing WebDriver
+2025-03-16 15:48:41,672 - INFO - ====== WebDriver manager ======
+2025-03-16 15:48:41,691 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:41,711 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:41] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:43,571 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:43,593 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:43] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:43,607 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:43,621 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:43] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:43,696 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-16 15:48:43,872 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-16 15:48:43,994 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-16 15:48:44,315 - INFO - WebDriver version 134.0.6998.88 selected
+2025-03-16 15:48:44,321 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.88/win32/chromedriver-win32.zip
+2025-03-16 15:48:44,322 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.88/win32/chromedriver-win32.zip
+2025-03-16 15:48:44,470 - INFO - Driver downloading response is 200
+2025-03-16 15:48:44,947 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-16 15:48:45,280 - INFO - Driver has been saved in cache [C:\Users\Dell\.wdm\drivers\chromedriver\win64\134.0.6998.88]
+2025-03-16 15:48:47,689 - INFO - Starting crawler with URL: https://pureportal.coventry.ac.uk/en/organisations/fbl-school-of-economics-finance-and-accounting
+2025-03-16 15:48:48,180 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:48,221 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:48] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:48,293 - ERROR - Error during crawling: Message: unknown error: net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+	GetHandleVerifier [0x0103B5A3+24387]
+	(No symbol) [0x00FC5904]
+	(No symbol) [0x00EA0753]
+	(No symbol) [0x00E9DB9E]
+	(No symbol) [0x00E914B8]
+	(No symbol) [0x00E92DC0]
+	(No symbol) [0x00E91747]
+	(No symbol) [0x00E912A3]
+	(No symbol) [0x00E90FB1]
+	(No symbol) [0x00E8EE80]
+	(No symbol) [0x00E8F91B]
+	(No symbol) [0x00EA420E]
+	(No symbol) [0x00F2FDE7]
+	(No symbol) [0x00F0D84C]
+	(No symbol) [0x00F2F138]
+	(No symbol) [0x00F0D646]
+	(No symbol) [0x00EDC59F]
+	(No symbol) [0x00EDD8E4]
+	GetHandleVerifier [0x0133D883+3179043]
+	GetHandleVerifier [0x01356CF9+3282585]
+	GetHandleVerifier [0x0135167C+3260444]
+	GetHandleVerifier [0x010D4330+650448]
+	(No symbol) [0x00FCED0D]
+	(No symbol) [0x00FCBAF8]
+	(No symbol) [0x00FCBC99]
+	(No symbol) [0x00FBE530]
+	BaseThreadInitThunk [0x76F2FCC9+25]
+	RtlGetAppContainerNamedObjectPath [0x770B82AE+286]
+	RtlGetAppContainerNamedObjectPath [0x770B827E+238]
+
+2025-03-16 15:48:50,733 - INFO - WebDriver closed
+2025-03-16 15:48:50,734 - INFO - Scheduled crawler completed. Found 0 publications.
+2025-03-16 15:48:50,746 - INFO - Loaded existing index with 1670 terms and 759 documents
+2025-03-16 15:48:50,751 - INFO - No new documents to index
+2025-03-16 15:48:50,753 - INFO - Scheduled indexing completed. Index contains 759 documents and 1670 terms.
+2025-03-16 15:48:50,758 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:48:50,763 - INFO - Loaded 759 publications
+2025-03-16 15:48:50,769 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:48:50,772 - INFO - Loaded 759 publications
+2025-03-16 15:48:53,133 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:53,150 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:53] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:54,815 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000166B71111D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/1ad9b3518a185cbf2a8d5c86df906d0e
+2025-03-16 15:48:58,124 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:48:58,132 - INFO - 127.0.0.1 - - [16/Mar/2025 15:48:58] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:48:58,879 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000166B7113C50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/1ad9b3518a185cbf2a8d5c86df906d0e
+2025-03-16 15:49:02,927 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000166B70F6520>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/1ad9b3518a185cbf2a8d5c86df906d0e
+2025-03-16 15:49:03,130 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:03,139 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:03] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:08,128 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:08,135 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:08] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:11,019 - INFO - WebDriver closed
+2025-03-16 15:49:13,136 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:13,145 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:13] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:18,132 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:18,150 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:18] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:23,126 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:23,139 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:23] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:28,119 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:28,130 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:28] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:33,131 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:33,142 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:33] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:34,877 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:34] "GET /admin HTTP/1.1" 200 -
+2025-03-16 15:49:34,984 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:49:35,004 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:35] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:49:38,870 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:38] "GET / HTTP/1.1" 200 -
+2025-03-16 15:49:47,783 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:47] "GET /search?query=Popular+movie+effects+on+advanced+finance+course+performance HTTP/1.1" 200 -
+2025-03-16 15:49:47,847 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:49:47,848 - INFO - Found 10 results
+2025-03-16 15:49:47,850 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:47] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-16 15:49:54,240 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:49:54,241 - INFO - Found 10 results
+2025-03-16 15:49:54,243 - INFO - 127.0.0.1 - - [16/Mar/2025 15:49:54] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=Brahmana&year= HTTP/1.1" 200 -
+2025-03-16 15:50:18,149 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:50:18,150 - INFO - Found 10 results
+2025-03-16 15:50:18,152 - INFO - 127.0.0.1 - - [16/Mar/2025 15:50:18] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=Brahmana&year=17 HTTP/1.1" 200 -
+2025-03-16 15:50:24,510 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:50:24,516 - INFO - Found 10 results
+2025-03-16 15:50:24,518 - INFO - 127.0.0.1 - - [16/Mar/2025 15:50:24] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=Brahmana&year=2025 HTTP/1.1" 200 -
+2025-03-16 15:50:27,969 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:50:27,970 - INFO - Found 10 results
+2025-03-16 15:50:27,973 - INFO - 127.0.0.1 - - [16/Mar/2025 15:50:27] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-16 15:52:17,033 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:17] "GET /admin HTTP/1.1" 200 -
+2025-03-16 15:52:17,112 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:52:17,126 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:17] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:52:20,503 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:20] "POST /api/build_index HTTP/1.1" 200 -
+2025-03-16 15:52:20,528 - INFO - Loaded existing index with 1670 terms and 759 documents
+2025-03-16 15:52:20,536 - INFO - No new documents to index
+2025-03-16 15:52:20,540 - INFO - Indexing completed. Contains 759 documents and 1670 terms.
+2025-03-16 15:52:20,545 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:52:20,548 - INFO - Loaded 759 publications
+2025-03-16 15:52:20,558 - INFO - Loaded index with 1670 terms and 759 documents
+2025-03-16 15:52:20,563 - INFO - Loaded 759 publications
+2025-03-16 15:52:21,978 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:52:21,985 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:21] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:52:22,110 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:52:22,117 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:22] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:52:27,112 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 15:52:27,123 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:27] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 15:52:28,403 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:28] "GET / HTTP/1.1" 200 -
+2025-03-16 15:52:31,850 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:31] "GET /search?query=Popular+movie+effects+on+advanced+finance+course+performance HTTP/1.1" 200 -
+2025-03-16 15:52:31,915 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 15:52:31,916 - INFO - Found 10 results
+2025-03-16 15:52:31,917 - INFO - 127.0.0.1 - - [16/Mar/2025 15:52:31] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-16 16:23:56,390 - INFO - 127.0.0.1 - - [16/Mar/2025 16:23:56] "GET /admin HTTP/1.1" 200 -
+2025-03-16 16:23:56,591 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:23:56,606 - INFO - 127.0.0.1 - - [16/Mar/2025 16:23:56] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:01,609 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:01,625 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:01] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:06,591 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:06,599 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:06] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:11,590 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:11,597 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:11] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:16,588 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:16,595 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:16] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:21,601 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:21,611 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:21] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:26,587 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:26,594 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:26] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:31,598 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:31,608 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:31] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:36,601 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:36,620 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:36] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:41,600 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:41,611 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:41] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:46,596 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:46,607 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:46] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:51,598 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:51,607 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:51] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:24:57,258 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:24:57,267 - INFO - 127.0.0.1 - - [16/Mar/2025 16:24:57] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:25:02,271 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:25:02,301 - INFO - 127.0.0.1 - - [16/Mar/2025 16:25:02] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:25:06,900 - ERROR - Error loading publications for statistics: '<' not supported between instances of 'int' and 'str'
+2025-03-16 16:25:06,935 - INFO - 127.0.0.1 - - [16/Mar/2025 16:25:06] "GET /api/status HTTP/1.1" 200 -
+2025-03-16 16:25:11,457 - INFO - 127.0.0.1 - - [16/Mar/2025 16:25:11] "GET /search HTTP/1.1" 200 -
+2025-03-16 16:25:14,691 - INFO - Searching for: popular movi effect advanc financ cours perform
+2025-03-16 16:25:14,692 - INFO - Found 10 results
+2025-03-16 16:25:14,694 - INFO - 127.0.0.1 - - [16/Mar/2025 16:25:14] "GET /api/search?query=Popular%20movie%20effects%20on%20advanced%20finance%20course%20performance&author=&year= HTTP/1.1" 200 -
+2025-03-16 16:56:33,180 - INFO - 127.0.0.1 - - [16/Mar/2025 16:56:33] "GET / HTTP/1.1" 200 -
+2025-03-16 16:56:39,548 - INFO - 127.0.0.1 - - [16/Mar/2025 16:56:39] "GET /search HTTP/1.1" 200 -
