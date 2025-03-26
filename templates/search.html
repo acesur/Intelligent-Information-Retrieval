@@ -223,13 +223,29 @@
     // Create HTML for a single result card
     function createResultCard(result, index) {
         const resultIndex = allResults.indexOf(result);
+
+        let authorBadges = '';
+        if (result.authors && result.authors.length > 0) {
+            result.authors.forEach((author, i) => {
+                const profileLink = result.author_profile_links[i] || null;
+                if (profileLink) {
+                    authorBadges += `<a href="${profileLink}" target="_blank" class="badge badge-author text-decoration-none">${author}</a> `;
+                } else {
+                    authorBadges += `<span class="badge badge-author">${author}</span> `;
+                }
+            });
+        }
+
+
+
         let html = `
             <div class="card publication-card mb-3" data-index="${resultIndex}">
                 <div class="card-body">
                     <h5 class="card-title">${result.title}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">
                         <span class="badge badge-year">${result.year || 'Unknown year'}</span>
-                        ${result.authors.map(author => `<span class="badge badge-author">${author}</span>`).join('')}
+                        ${authorBadges}
+                        
                     </h6>
                     <p class="card-text">
                         ${result.abstract ? result.abstract.substring(0, 200) + '...' : 'No abstract available'}
@@ -247,7 +263,30 @@
     function showPublicationDetails(publication) {
         // Populate modal fields
         $('#modal-title').text(publication.title);
-        $('#modal-authors').text(publication.authors.join(', '));
+
+        let authorText = '';
+        if (publication.authors && publication.authors.length > 0){
+
+            const authorLinks = publication.author_profile_links || [];
+            for (let i = 0; i < publication.authors.length; i++){
+                const author = publication.authors[i];
+                const profileLink = authorLinks[i] || null;
+
+                if (profileLink){
+                    authorText += `<a href="${profileLink}" target="_blank">${author}</a>`;
+
+                } else {
+                    authorText += author;
+                }
+                if (i < publication.authors.length - 1) {
+                    authorText += ', ';
+                }
+            }
+            
+        }else{
+            authorText = 'Unknown';
+        }
+        $('#modal-authors').html(authorText);
         $('#modal-year').text(publication.year || 'Unknown');
         $('#modal-abstract').text(publication.abstract || 'No abstract available');
         

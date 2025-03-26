@@ -60,6 +60,9 @@ init_successful = init_query_processor()
 if not init_successful:
     logger.warning("Failed to initialize query processor. Search results may be unavailable.")
 
+def scheduled_task():
+    print("Scheduled task is running...")
+
 # Background scheduler thread
 def run_scheduler():
     global stop_bg_thread
@@ -80,7 +83,6 @@ bg_thread.start()
 def scheduled_task():
     """Run scheduled tasks (crawler and indexing)"""
     logger.info("Running scheduled tasks")
-    
     # Run crawler
     try:
         start_url = "https://pureportal.coventry.ac.uk/en/organisations/fbl-school-of-economics-finance-and-accounting"
@@ -89,7 +91,6 @@ def scheduled_task():
         logger.info(f"Scheduled crawler completed. Found {len(crawler.publications)} publications.")
     except Exception as e:
         logger.error(f"Error in scheduled crawler: {e}")
-    
     # Run indexing
     try:
         index_builder = InvertedIndex(data_dir=data_dir, index_dir=index_dir)
@@ -97,7 +98,6 @@ def scheduled_task():
             success = index_builder.update_index()
         else:
             success = index_builder.build_index()
-        
         if success:
             stats = index_builder.get_statistics()
             logger.info(f"Scheduled indexing completed. Index contains {stats['total_documents']} documents and {stats['total_terms']} terms.")
@@ -105,7 +105,6 @@ def scheduled_task():
             logger.error("Error in scheduled indexing")
     except Exception as e:
         logger.error(f"Error in scheduled indexing: {e}")
-    
     # Reinitialize query processor
     init_query_processor()
 
@@ -191,12 +190,17 @@ def search_api():
             clean_result = {
                 'title': result.get('title', result.get('Title', 'No title')),
                 'authors': result.get('authors', result.get('Authors', [])),
+                'author_profile_links': result.get('Author Profile Links', result.get('author_profile_links', [])),
                 'year': result.get('year', result.get('Year', '')),
                 'url': result.get('url', result.get('Publication Link', '')),
                 'abstract': result.get('abstract', result.get('Abstract', 'No abstract available')),
                 'keywords': result.get('keywords', result.get('Keywords', [])),
                 'score': float(result.get('score', 0))
             }
+            if len(clean_result['author_profile_links']) < len(clean_result['authors']):
+                clean_result['author_profile_links'].extend(['' for _ in range(
+                    len(clean_result['authors']) - len(clean_result['author_profile_links'])
+                )])
             clean_results.append(clean_result)
         
         return jsonify({

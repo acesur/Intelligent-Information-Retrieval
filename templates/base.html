@@ -41,16 +41,50 @@
             background-color: #6c757d;
         }
         .badge-author {
+
             font-size: 0.8rem;
-            background-color: #007bff;
+            background-color: #6c757d;
+            color: white;
             margin-right: 5px;
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-weight: normal;
             margin-bottom: 5px;
+            transition: all 0.2s ease;
+        }
+        a.badge-author:hover{
+            background-color: #5a6268;
+            color: white;
+            text-decoration: none !important;
+            cursor: pointer;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        a.badge-author{
+            text-decoration: none !important;
+        }
+        a.badge-author::after{
+            content: "";
+            font-size: 0.7em;
+            opacity: 0.7;
+            margin-left: 3px;
+            vertical-align: super;
+        }
+        .badge-year{
+            background-color: #28a745;
+            color: white;
+            margin-right: 10px;
+            padding: 5px 8px;
+            border-radius: 4px;
         }
         .badge-keyword {
-            font-size: 0.8rem;
-            background-color: #28a745;
+            
+            background-color: #17a2b4;
             margin-right: 5px;
             margin-bottom: 5px;
+            padding: 5px 8px;
+            border-radius: 4px;
+            display: inline-block;
         }
         .search-header {
             background-color: #f8f9fa;
